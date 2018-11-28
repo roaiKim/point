@@ -1,0 +1,13 @@
+
+
+yarn  的使用
+
+1, yarn init   //yarn的初始化
+
+2,yarn add [package]  --dev / --peer / optional   //安装依赖 [安装到开发环境  / 生产环境 / all]
+
+3,yarn upgrade [package]  //升级依赖包
+
+4,yarn remove [package]  //移除依赖包
+
+5,yarn / yarn install  //安装项目的全部依赖
