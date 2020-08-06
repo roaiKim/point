@@ -290,11 +290,17 @@ yarn add eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser -D
 ---
 ### 🤡 遇到的坑 🙈
 ##### js项目的eslint问题 🐸
+
 > ❶ 由于eslint的默认解析器不支持新语法(如class的属性) 所以需要用别的解析器(AST)
+
 > 𝟐 所以官法推荐 babel-eslint
+
 > ⓷ 然而 最新版的 babel-eslint@11.0.0-beta.2 需要提供babel的设置文件(如 .babelrc.json)
+
 > ④ 所以 有些项目没有(一般都在webpack集成) 就无法解析 导致无法使用
+
 > 𝟝 而且最新版还是beta版本 
+
 > ⁶ 解决思路 1: 提供bebel设置文件 2: 降级到@10版本 ✅
 
 ### 🤡 npm发布 🐹
