@@ -278,3 +278,277 @@ export default class GenalChat extends Vue {
   }
 }
 </style>
+
+
+
+#############################
+以下这个是上面这个的优化版本 
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+}
+html {
+    overflow: hidden;
+}
+canvas {
+    /* cursor: none; */
+}
+</style>
+<canvas id="canvas" width="100%" height="100%"></canvas>
+<script>
+
+class Particle {
+    particle = {
+        x: 0,
+        y: 0,
+        vx: 0,
+        vy: 0,
+        radius: 0
+    }
+    create = (x, y, speed, direction, color) => {
+        const obj = Object.create(this.particle);
+        obj.x = x;
+        obj.y = y;
+        obj.color = color;
+        obj.vx = Math.cos(direction) * speed;
+        obj.vy = Math.sin(direction) * speed;
+        return obj;
+    }
+    getSpeed = (obj) => {
+        return Math.sqrt(obj.vx * obj.vx + obj.vy * obj.vy);
+    }
+    setSpeed = (obj, speed) => {
+        const heading = this.getHeading(obj);
+        obj.vx = Math.cos(heading) * speed;
+        obj.vy = Math.sin(heading) * speed;
+    }
+    getHeading = (obj) => {
+        return Math.atan2(obj.vy, obj.vx);
+    }
+    setHeading = (obj, heading) => {
+        const speed = this.getSpeed(obj);
+        obj.vx = Math.cos(heading) * speed;
+        obj.vy = Math.sin(heading) * speed;
+    }
+    update = (obj) => {
+        obj.x += obj.vx;
+        obj.y += obj.vy;
+    }
+}
+
+class GenalChat {
+    constructor() {
+        this.canvas = document.getElementById('canvas');
+        this.context = canvas.getContext('2d');
+
+        this.particle = new Particle()
+
+        this.width = (this.canvas.width = window.innerWidth);
+        this.height = (this.canvas.height = window.innerHeight);
+        this.stars = [];
+        this.shootingStars = [];
+        this.layers = [
+          { speed: Number(((Math.random()*4 + 1) / 10).toFixed(2)), scale: Number(((Math.random()*4 + 1) / 10).toFixed(2)), count: 320 },
+          { speed: Number(((Math.random()*6 + 2) / 10).toFixed(2)), scale: Number(((Math.random()*6 + 2) / 10).toFixed(2)), count: 50 },
+          { speed: Number(((Math.random()*8 + 3) / 10).toFixed(2)), scale: Number(((Math.random()*6 + 2) / 10).toFixed(2)), count: 30 },
+        ];
+        this.starsAngle = 145;
+        this.shootingStarSpeed = {
+          min: 5,
+          max: 20,
+        };
+        this.shootingStarOpacityDelta = 0.01;
+        this.trailLengthDelta = 0.01;
+        this.shootingStarEmittingInterval = 2000;
+        this.shootingStarLifeTime = 500;
+        this.maxTrailLength = 300;
+        this.starBaseRadius = 2;
+        this.shootingStarRadius = 3;
+        this.paused = false;
+
+        window.onfocus = function() {
+            this.paused = false;
+        };
+
+        window.onblur = function() {
+            this.paused = true;
+        };
+    }
+
+    destory = () => {
+        clearInterval(this.timerInterval)
+        cancelAnimationFrame(this.timerAnimationFrame)
+        this.stars = [];
+        this.shootingStars = [];
+    }
+
+    start() {
+      this.runStarrySky();
+      this.update();
+      this.timerInterval = setInterval(() => {
+        if (this.paused) return;
+        this.createShootingStar();
+      }, this.shootingStarEmittingInterval);
+    }
+
+    lineToAngle(x1, y1, length, radians) {
+        var x2 = x1 + length * Math.cos(radians),
+            y2 = y1 + length * Math.sin(radians);
+        return { x: x2, y: y2 };
+    }
+
+    randomRange(min, max) {
+        return min + Math.random() * (max - min);
+    }
+
+    degreesToRads(degrees) {
+        return (degrees / 180) * Math.PI;
+    }
+
+    degreesToRads(degrees) {
+        return (degrees / 180) * Math.PI;
+    }
+
+    createShootingStar = () => {
+        const shootingStar = this.particle.create(this.randomRange(this.width / 2, this.width), this.randomRange(0, this.height / 2), 0, 0, this.randomColor(1));
+        this.particle.setSpeed(shootingStar, this.randomRange(this.shootingStarSpeed.min, this.shootingStarSpeed.max));
+        this.particle.setHeading(shootingStar, this.degreesToRads(this.starsAngle));
+        shootingStar.radius = this.shootingStarRadius;
+        shootingStar.opacity = 0;
+        shootingStar.trailLengthDelta = 0;
+        shootingStar.isSpawning = true;
+        shootingStar.isDying = false;
+        this.shootingStars.push(shootingStar);
+    }
+
+    killShootingStar(shootingStar) {
+        setTimeout(function() {
+          shootingStar.isDying = true;
+        }, this.shootingStarLifeTime);
+    }
+
+    randomColor(a) {
+        const r = Math.floor(Math.random() * 255);// random()方法可返回介于 0~1 之间的一个随机数
+        const g = Math.floor(Math.random() * 255);
+        const b = Math.floor(Math.random() * 255);
+        return `rgba(${r},${g},${b},${a})`;
+    }
+
+    drawStar = (star) => {
+        this.context.fillStyle = star.color // 'rgb(255, 221, 157)';
+        this.context.beginPath();
+        this.context.arc(star.x, star.y, star.radius, 0, Math.PI * 2, false);
+        this.context.fill();
+    }
+
+    drawShootingStar = (particle) => {
+        const x = particle.x,
+        y = particle.y,
+        currentTrailLength = this.maxTrailLength * particle.trailLengthDelta,
+        pos = this.lineToAngle(x, y, -currentTrailLength, this.particle.getHeading(particle));
+        this.context.fillStyle = particle.color; // 'rgba(255, 255, 255, ' + particle.opacity + ')';
+        const starLength = 5;
+        this.context.beginPath();
+        this.context.moveTo(x - 1, y + 1);
+        this.context.lineTo(x, y + starLength);
+        this.context.lineTo(x + 1, y + 1);
+        this.context.lineTo(x + starLength, y);
+        this.context.lineTo(x + 1, y - 1);
+        this.context.lineTo(x, y + 1);
+        this.context.lineTo(x, y - starLength);
+        this.context.lineTo(x - 1, y - 1);
+        this.context.lineTo(x - starLength, y);
+        this.context.lineTo(x - 1, y + 1);
+        this.context.lineTo(x - starLength, y);
+        this.context.closePath();
+        this.context.fill();
+        
+        this.context.fillStyle = particle.color; // 'rgba(255, 221, 157, ' + particle.opacity + ')';
+        this.context.beginPath();
+        this.context.moveTo(x - 1, y - 1);
+        this.context.lineTo(pos.x, pos.y);
+        this.context.lineTo(x + 1, y + 1);
+        this.context.closePath();
+        this.context.fill();
+    }
+
+    update = () => {
+        if (!this.paused) {
+          this.context.clearRect(0, 0, this.width, this.height);
+          this.context.fillStyle = '#282a3a';
+          this.context.fillRect(0, 0, this.width, this.height);
+          this.context.fill();
+          const starsLength = this.stars.length
+          for (let i = 0; i < starsLength; i += 1) {
+            const star = this.stars[i];
+            this.particle.update(star);
+            this.drawStar(star);
+            if (star.x > this.width) {
+              star.x = 0;
+            }
+            if (star.x < 0) {
+              star.x = this.width;
+            }
+            if (star.y > this.height) {
+              star.y = 0;
+            }
+            if (star.y < 0) {
+              star.y = this.height;
+            }
+          }
+          const shootingStarsLength = this.shootingStars.length
+          for (let i = 0; i < shootingStarsLength; i++) {
+            const shootingStar = this.shootingStars[i];
+            if (shootingStar.isSpawning) {
+              shootingStar.opacity += this.shootingStarOpacityDelta;
+              if (shootingStar.opacity >= 1.0) {
+                shootingStar.isSpawning = false;
+                this.killShootingStar(shootingStar);
+              }
+            }
+            if (shootingStar.isDying) {
+              shootingStar.opacity -= this.shootingStarOpacityDelta;
+              if (shootingStar.opacity <= 0.0) {
+                shootingStar.isDying = false;
+                shootingStar.isDead = true;
+              }
+            }
+            shootingStar.trailLengthDelta += this.trailLengthDelta;
+            this.particle.update(shootingStar);
+            if (shootingStar.opacity > 0) {
+              this.drawShootingStar(shootingStar);
+            }
+          }
+          //Delete dead shooting shootingStars
+          for (let i = this.shootingStars.length - 1; i >= 0; i--) {
+            if (this.shootingStars[i].isDead) {
+              this.shootingStars.splice(i, 1);
+            }
+          }
+        }
+        this.timerAnimationFrame = requestAnimationFrame(this.update);
+      }
+
+    // 星空代码
+    runStarrySky() {
+      for (let j = 0; j < this.layers.length; j++) {
+        const layer = this.layers[j];
+        for (let i = 0; i < layer.count; i++) {
+          const star = this.particle.create(this.randomRange(0, this.width), this.randomRange(0, this.height), 0, 0, this.randomColor(1));
+          star.radius = this.starBaseRadius * layer.scale;
+          this.particle.setSpeed(star, layer.speed);
+          this.particle.setHeading(star, this.degreesToRads(this.starsAngle));
+          this.stars.push(star);
+        }
+      }
+    }
+}
+
+window.genalChat = (genalChat = new GenalChat());
+genalChat.start();
+
+// setTimeout(genalChat.destory, 10000)
+
+</script>
