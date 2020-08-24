@@ -1,0 +1,6 @@
+BFC（块格式化上下文：Block formatting context）
+
+解决了
+1. 父元素高度塌陷： 父元素上加上display: flow-root，让父元素形成一个BFC可以包裹住子元素
+2. 外边距折叠 ：父元素上加上overflow: hidden
+3. 自适应多栏布局 ：给兄弟元素中没有float: left的另一个元素加上overflow: auto
