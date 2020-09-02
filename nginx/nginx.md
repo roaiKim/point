@@ -3,9 +3,9 @@ linux nginx 安装
 1.安装
 yum install nginx
 
-which nginx //查看nginx的安装路径
+which nginx //查看nginx的命令行路径
 
-whereis nginx //查看nginx
+whereis nginx //查看nginx的安装路径
 
 nginx //启动nginx
 
