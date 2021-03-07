@@ -1,13 +1,13 @@
 
 
-yarn  µÄÊ¹ÓÃ
+yarn  ï¿½ï¿½Ê¹ï¿½ï¿½
 
-1, yarn init   //yarnµÄ³õÊ¼»¯
+1, yarn init   //yarnï¿½Ä³ï¿½Ê¼ï¿½ï¿½
 
-2,yarn add [package]  --dev / --peer / optional   //°²×°ÒÀÀµ [°²×°µ½¿ª·¢»·¾³  / Éú²ú»·¾³ / all]
+2,yarn add [package]  --dev / --peer / optional   //ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ [ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  / ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ / all]
 
-3,yarn upgrade [package]  //Éý¼¶ÒÀÀµ°ü
+3,yarn upgrade [package]  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-4,yarn remove [package]  //ÒÆ³ýÒÀÀµ°ü
+4,yarn remove [package]  //ï¿½Æ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-5,yarn / yarn install  //°²×°ÏîÄ¿µÄÈ«²¿ÒÀÀµ
+5,yarn / yarn install  //ï¿½ï¿½×°ï¿½ï¿½Ä¿ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
