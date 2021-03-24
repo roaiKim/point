@@ -1,4 +1,5 @@
 
+```js
 
 function sleep(ms) {
             return new Promise(function (resolve, reject) {
@@ -21,3 +22,6 @@ function sleep(ms) {
         Promise.all([sleep(1000), sleep(2000), sleep(3000)]).then((value) => {
             console.log("values", value)
         })
+
+```
+
