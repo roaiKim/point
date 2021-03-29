@@ -19,4 +19,5 @@ manifest: 模块之间的交互
 一些import和require语句都已经转换为__webpack_require__方法
 这个方法指向模块的标识符。
 通过manifest中的数据 runtime将能够检索这些标识符 并找到标识符背后对应的模块
-    
+
+主要是为了缓存
