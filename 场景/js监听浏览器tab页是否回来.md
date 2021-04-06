@@ -1,3 +1,5 @@
+
+```js
 // 窗口激活状态监听
 let vEvent = 'visibilitychange';
 if (document.webkitHidden != undefined) {
@@ -15,8 +17,9 @@ function visibilityChanged() {
 }
 
 document.addEventListener(vEvent, visibilityChanged, false);
-
+```
 作者：前端小师妹
 链接：https://zhuanlan.zhihu.com/p/341021975
 来源：知乎
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
