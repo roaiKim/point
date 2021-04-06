@@ -1,3 +1,4 @@
+```vue
 <template>
   <div id="app">
     <router-view />
@@ -552,3 +553,4 @@ genalChat.start();
 // setTimeout(genalChat.destory, 10000)
 
 </script>
+```
