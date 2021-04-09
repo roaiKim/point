@@ -15,3 +15,6 @@ mime.getExtension('text/plain');        // ⇨ 'txt'
 
 ### [Luckysheet](https://github.com/mengshukeji/Luckysheet)
 > 前端实现的excel表格 可以实现多人编辑
+
+### [chalk](https://github.com/chalk/chalk)
+> 终端彩色输出工具 美化输出nodejs
