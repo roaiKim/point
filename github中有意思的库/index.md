@@ -18,3 +18,6 @@ mime.getExtension('text/plain');        // ⇨ 'txt'
 
 ### [chalk](https://github.com/chalk/chalk)
 > 终端彩色输出工具 美化输出nodejs
+
+### [favico](https://github.com/ejci/favico.js)
+> 设置网站上的图片(favico)上的小红点
