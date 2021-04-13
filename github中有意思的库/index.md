@@ -21,3 +21,6 @@ mime.getExtension('text/plain');        // ⇨ 'txt'
 
 ### [favico](https://github.com/ejci/favico.js)
 > 设置网站上的图片(favico)上的小红点
+
+### [Docsify](https://github.com/docsifyjs/docsify)
+> 快速生成文档的插件
