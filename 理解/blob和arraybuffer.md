@@ -46,6 +46,7 @@ https://zhuanlan.zhihu.com/p/97768916
       - URL.createObjectURL(blob) 直接返回，同步执行；
 
   5.  多个文件
+  
       - FileReader.readAsDataURL(blob)同时处理多个文件时，需要一个文件对应一个 FileReader 对象；
       - URL.createObjectURL(blob) 依次返回，没有影响；
 
