@@ -51,3 +51,56 @@
 <input type="file" name="file" onchange="showPreview(this)" />
 <img id="portrait" src="" width="70" height="75">
 ```
+
+### 例子拖拽上传
+
+```jsx
+<label
+className={this.state.isDragOver ? "drag-over" : ""}
+onDrop={this.onDropFile}
+onDragEnter={this.onDragEnter}
+onDragLeave={this.onDragLeave}>
+    <input accept=".txt" type="file" onChange={this.onChangeFile} />
+    <Icon type={IconClass.CLOUD_UPLOAD} />
+        拖拽 txt 文件至此文本框导入，或
+    <em>选择文件</em>
+</label>
+
+onDragEnter = () => this.setState({isDragOver: true});
+
+onDragLeave = () => this.setState({isDragOver: false});
+
+onDropFile = (event: React.DragEvent) => {
+    event.preventDefault();
+    this.setState({isDragOver: false});
+    const draggedFile: File = event.dataTransfer.files[0];
+    if (draggedFile) {
+        this.readFileContent(draggedFile);
+    }
+};
+
+onChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files && files[0]) {
+        this.readFileContent(files[0]);
+    }
+};
+
+readFileContent = (file: File) => {
+    if (file.size > 125 * 1024) {
+        createSyncModal({
+            headerText: "上传失败",
+            bodyText: "所上传文件大小不能超过 125 KB，请重新上传！",
+        });
+    } else if (!file.type.match(/text.*/)) {
+        createSyncModal({
+            headerText: "上传失败",
+            bodyText: "所上传文件格式有误，请重新上传！",
+        });
+    } else {
+        const fileReader = new FileReader();
+        fileReader.readAsText(file);
+        fileReader.onload = () => this.confirmUploadRawBets(fileReader.result!.toString());
+    }
+};
+```
