@@ -4,7 +4,8 @@ let WIDTH = document.documentElement.clientWidth;
 let HEIGHT = document.documentElement.clientHeight;
 const initStarsPopulation = 80;
 let mouseMoving = false;
-let mouseMoveChecker: NodeJS.Timeout;
+// ts ingnore
+let mouseMoveChecker //: NodeJS.Timeout;
 let mouseX = 0;
 let mouseY = 0;
 const dotsMinDist = 2;
