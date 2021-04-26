@@ -25,4 +25,8 @@ mime.getExtension('text/plain');        // ⇨ 'txt'
 ### [Docsify](https://github.com/docsifyjs/docsify)
 > 快速生成文档的插件
 
-### [XLSX]()
+### [XLSX](https://github.com/SheetJS/sheetjs)
+> 生成 excel 表格的插件
+
+### [driver.js](https://github.com/kamranahmedse/driver.js)
+> 网站的引导页
