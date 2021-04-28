@@ -30,3 +30,6 @@ mime.getExtension('text/plain');        // ⇨ 'txt'
 
 ### [driver.js](https://github.com/kamranahmedse/driver.js)
 > 网站的引导页
+
+### [CodeMirror](https://github.com/codemirror/CodeMirror)
+> 浏览器中的代码编辑器
