@@ -8,3 +8,7 @@ npm install -g pm2
 ```
 
 + 启动命令 `pm2 start main.js`
+
+
+## pm2 monit
+> 这个命令是监控命令 在 windows 上基本只能用 自带的 CMD 面板 其他无输出或者报错
