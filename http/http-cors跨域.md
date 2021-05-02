@@ -16,7 +16,7 @@ cors -> Cross-origin resource sharing
             .Accept-Language
             .Last-Event-ID
             .Content-Language
-            .Content-Type只能是application/x-www-forn-urlencoded, multipart/form0data, text/plain
+            .Content-Type只能是application/x-www-forn-urlencoded, multipart/form-data, text/plain
     
     . 非简单请求
         除去简单请求的都是非简单请求

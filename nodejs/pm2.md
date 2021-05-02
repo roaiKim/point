@@ -6,9 +6,16 @@
 ```bash
 npm install -g pm2
 ```
-
-+ 启动命令 `pm2 start main.js`
-
-
 ## pm2 monit
 > 这个命令是监控命令 在 windows 上基本只能用 自带的 CMD 面板 其他无输出或者报错
+
++ 启动命令 `pm2 start main.js`
+   1. 重命名应用 `pm2 start main.js --name <name>`
+
++ 停止命令 `pm2 stop mame`
+
++ 重启命令 `pm2 restart name`
+
++ 查看所有列表 `pm2 list`
+
+
