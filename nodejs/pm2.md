@@ -31,7 +31,29 @@ npm install -g pm2
             "script": "./service-nest-ro-427-3000/main.js",
             "error_file": "./logs/3000/error_3000.log",
             "out_file": "./logs/3000/out_3000.log",
-            "log_date_format": "YYYY-MM-DD HH:mm:ss Z"
+            "log_date_format": "YYYY-MM-DD HH:mm:ss Z",
+            "watch": true,                              // 是否监听文件变动然后重启
+            "ignore_watch": [                           // 不用监听的文件
+                "node_modules",
+                "logs"
+            ],
+            "exec_mode": "cluster_mode",                // 应用启动模式，支持fork和cluster模式
+            "instances": 4,                             // 应用启动实例个数，仅在cluster模式有效 默认为fork；或者 max
+            "max_memory_restart": "512M",               // 最大内存限制数，超出自动重启
+            "max_restarts": 30,                         // 最大异常重启次数，即小于min_uptime运行时间重启次数；
+            "autorestart": true,                        // 默认为true, 发生异常的情况下自动重启
+            "env": {
+            "NODE_ENV": "production",                   // 环境参数，当前指定为生产环境 process.env.NODE_ENV
+            "REMOTE_ADDR": "wa"                  // process.env.REMOTE_ADDR
+            },
+            "env_dev": {
+                "NODE_ENV": "development",              // 环境参数，当前指定为开发环境 pm2 start app.js --env_dev
+                "REMOTE_ADDR": ""
+            },
+            "env_test": {                               // 环境参数，当前指定为测试环境 pm2 start app.js--env_test
+                "NODE_ENV": "test",
+                "REMOTE_ADDR": ""
+            }
         },
         {
             "name": "3100",
