@@ -43,8 +43,8 @@ npm install -g pm2
             "max_restarts": 30,                         // 最大异常重启次数，即小于min_uptime运行时间重启次数；
             "autorestart": true,                        // 默认为true, 发生异常的情况下自动重启
             "env": {
-            "NODE_ENV": "production",                   // 环境参数，当前指定为生产环境 process.env.NODE_ENV
-            "REMOTE_ADDR": "wa"                  // process.env.REMOTE_ADDR
+                "NODE_ENV": "production",               // 环境参数，当前指定为生产环境 process.env.NODE_ENV
+                "REMOTE_ADDR": "wa"                     // process.env.REMOTE_ADDR
             },
             "env_dev": {
                 "NODE_ENV": "development",              // 环境参数，当前指定为开发环境 pm2 start app.js --env_dev
