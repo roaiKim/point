@@ -98,3 +98,20 @@ import "regenerator-runtime/runtime";
 + 插件的运行顺序从前往后
 + preset的顺序从后往前
 
+## 插件的短名称
+如果插件的名称为 @babel/plugin-XXX, 则可以使用短名称 @babel/XXX
+
+
+## @babel/cli
+> 内置命令行工具 可以使用命令运行babel  
+`babel src --out-dir dist`
+
+## @babel/parser
+> babel 解析器
+
+## @babel/generator
+> 把AST转换成code
+
+## @babel/runtime
+> 这是一个帮助函数的库  
+`var _includes = _interopRequireDefault(require("@babel/runtime-corejs3/core-js-stable/instance/includes"));`
