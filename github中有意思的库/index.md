@@ -36,3 +36,9 @@ mime.getExtension('text/plain');        // ⇨ 'txt'
 
 ### [react-flow](https://reactflow.dev/)
 > react 做成的流程图 可以解决拓扑的结构
+
+### [react-spring](https://github.com/pmndrs/react-spring) 动画
+> react 做的弹簧库
+
+### [react-motion](https://github.com/chenglou/react-motion) 动画
+> react 做的动画图
