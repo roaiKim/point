@@ -19,6 +19,14 @@ babel 的 插件分为两类
 + 语法插件
 + 装换插件
 
+## @babel/plugin-proposal-decorators 装饰器
+> `yarn add @babel/plugin-proposal-decorators`
+> ```js
+// .babelrc
+{
+    "plugins": ["@babel/plugin-transform-array-functions"]
+}
+```
 
 ## 插件的使用
 > 在项目的根目录中新建 .babelrc 文件
