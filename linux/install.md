@@ -1,7 +1,13 @@
 
 ## 卸载 应用
 `yum remove XX`
+1.先卸载npm 
 
+            sudo npm uninstall npm -g
+
+2.卸载node
+
+            yum remove nodejs npm -y
 ---
 
 ## 安装git
