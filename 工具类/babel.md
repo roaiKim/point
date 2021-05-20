@@ -20,11 +20,16 @@ babel 的 插件分为两类
 + 装换插件
 
 ## @babel/plugin-proposal-decorators 装饰器
-> `yarn add @babel/plugin-proposal-decorators`
-> ```js
+> 这个装饰器需要配合 @babel/plugin-proposal-class-properties 一起使用 并且在 @babel/plugin-proposal-class-properties 前使用  
+legacy 参数使用原先的议案功能
+`yarn add @babel/plugin-proposal-decorators`
+```js
 // .babelrc
 {
-    "plugins": ["@babel/plugin-transform-array-functions"]
+    "plugins": [
+        ["@babel/plugin-proposal-decorators", {legacy: true}],
+        ["@babel/plugin-proposal-class-properties"],
+    ]
 }
 ```
 
