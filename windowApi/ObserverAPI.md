@@ -1,4 +1,4 @@
-### IntersectionObserver
+## IntersectionObserver
 > 这个可以观察元素是否进入窗口可见部分
 
 ```js
@@ -90,3 +90,11 @@ new IntersectionObserver(
 
 ### 注意点
 > 这个api是异步的 不随着目标元素滚动的同步触发 采用 requestIdleCallback 优先级很低
+
+
+## mutationObserver
+> HTML 元素是否被修改
+
+## ResizeObserver
+> 元素的边框或者尺寸被修改
+

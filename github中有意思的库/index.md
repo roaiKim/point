@@ -42,3 +42,6 @@ mime.getExtension('text/plain');        // ⇨ 'txt'
 
 ### [react-motion](https://github.com/chenglou/react-motion) 动画
 > react 做的动画图
+
+### [nzh](https://github.com/cnwhy/nzh)
+> 这是一款数字转中文的库  nzhcn.encodeB(100111); // 转中文大写 >> 壹拾万零壹佰壹拾壹
