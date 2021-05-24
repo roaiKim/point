@@ -7,3 +7,10 @@ location / {
     try_files $uri $uri/ /index.html;
 }
 ```
+
+### 在windows 下 路径要改成反斜杆
+```conf
+location / {
+    root   E:/nginx-dir/client-nest-ro-21426;
+}
+```

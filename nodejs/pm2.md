@@ -85,3 +85,40 @@ npm install -g pm2
 + 日志查看 `pm2 logs name --lines 30 --err --out` // 查看 name 的 err/out 日志 30 行 
 
 + 监控 `pm2 monit`  // 这个命令是监控命令 在 windows 上基本只能用 自带的 CMD 面板 其他无输出或者报错
+
+
+### 配置
+```json
+{
+	"apps": [{
+			"name": "3200",
+			"script": "./nest_server_5_24/main.js",
+			"error_file": "./nest_server_5_24/logs/error_3200.log",
+			"out_file": "./nest_server_5_24/logs/out_3000.log",
+			"log_date_format": "YYYY-MM-DD HH:mm:ss Z",
+			"watch": false,
+			"ignore_watch": [
+				"node_modules",
+				"logs"
+			],
+			"exec_mode": "cluster_mode",
+			"instances": 4,
+			"max_memory_restart": "512M",
+			"max_restarts": 30,
+			"autorestart": true,
+			"env": {
+				"NODE_ENV": "production",
+				"REMOTE_ADDR": "wa"
+			},
+			"env_dev": {
+				"NODE_ENV": "development",
+				"REMOTE_ADDR": ""
+			},
+			"env_test": {
+				"NODE_ENV": "test",
+				"REMOTE_ADDR": ""
+			}
+		}
+	]
+}
+```
