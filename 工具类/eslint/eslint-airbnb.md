@@ -103,7 +103,7 @@ yarn add stylelint stylelint-config-standard -D
 ```javascript
 "scripts": {
     "eslint": "./node_modules/.bin/eslint src",
-    "eslint:fix": "./node_modules/.bin/eslint --fix src"
+    "eslint:fix": "./node_modules/.bin/eslint --fix src/**"
 }
 ```
 > eslint 用于查询项目中不符合eslint的文件
