@@ -45,3 +45,6 @@ mime.getExtension('text/plain');        // ⇨ 'txt'
 
 ### [nzh](https://github.com/cnwhy/nzh)
 > 这是一款数字转中文的库  nzhcn.encodeB(100111); // 转中文大写 >> 壹拾万零壹佰壹拾壹
+
+### [react-sortable-hoc](https://github.com/clauderic/react-sortable-hoc)
+> react 的拖拽库
