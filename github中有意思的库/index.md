@@ -48,3 +48,6 @@ mime.getExtension('text/plain');        // ⇨ 'txt'
 
 ### [react-sortable-hoc](https://github.com/clauderic/react-sortable-hoc)
 > react 的拖拽库
+
+### [lottie]()
+> svg 动画库
