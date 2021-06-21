@@ -117,3 +117,13 @@ async getUserList(@Query() request: UserGetUserRequest): Promise<any> {
     return {code: 0, message: "OK",data: {list, totalRecord}};
 }
 ```
+
+
+### 使用
+> 控制器是属于模块的 控制器准备好了 但是 Nest 是不知道的 所以 我们需要在模块中声明
+```ts
+@Module({
+    controllers: [UserController]
+})
+export class UserModule {}
+```
