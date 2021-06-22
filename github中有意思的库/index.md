@@ -51,3 +51,10 @@ mime.getExtension('text/plain');        // ⇨ 'txt'
 
 ### [lottie]()
 > svg 动画库
+
+### [PDF]
+react-pdf/renderer
+react-pdf
+@phuocng/react-pdf-viewer
+react-file-viewer
+@mikecousins/react-pdf
