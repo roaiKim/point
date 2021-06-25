@@ -51,3 +51,13 @@ mime.getExtension('text/plain');        // ⇨ 'txt'
 
 ### [lottie]()
 > svg 动画库
+
+### [PDF]
+react-pdf/renderer
+react-pdf
+@phuocng/react-pdf-viewer
+react-file-viewer
+@mikecousins/react-pdf
+
+### [pano2vr]()
+> VR 软件 可以直接输出 HTML 文件
