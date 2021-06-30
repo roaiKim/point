@@ -1,0 +1,1 @@
+box-shadow: 5px 5px 35px rgb(56 32 72), -5px -5px 35px rgb(212 176 235 / 64%);
