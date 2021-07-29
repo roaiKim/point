@@ -14,4 +14,19 @@ export class AModule {}
 ```
 
 #### 功能模块
-> 
+> 功能模块是把相关的server和controller结合在一起的模块，只是普通的模块
+
+#### 共享模块
+> z在Nest中 模块都是单例的只需要把他放入@Module的exports数组中，对于导入了该模块的类来说，都是可用的。
+
+#### 全局模块
+> 全局模块在全局中可用 用 @Global() 装饰
+这样在其他模块中不需要在@Module的imports数组中手动导入
+```ts
+@Global()
+@Module({
+  controllers: [CatsController],
+  providers: [CatsService],
+  exports: [CatsService],
+})
+```
