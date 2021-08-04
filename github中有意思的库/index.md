@@ -61,3 +61,6 @@ react-file-viewer
 
 ### [pano2vr]()
 > VR 软件 可以直接输出 HTML 文件
+
+### [number-precision](https://github.com/nefe/number-precision)
+> 处理数字的一个库, 0.1 + 0.2 !== 0.3
