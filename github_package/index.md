@@ -64,3 +64,6 @@ react-file-viewer
 
 ### [number-precision](https://github.com/nefe/number-precision)
 > 处理数字的一个库, 0.1 + 0.2 !== 0.3
+
+### [scroll-into-view-if-needed](https://github.com/stipsan/scroll-into-view-if-needed)
+> 滚动的库
