@@ -2,12 +2,12 @@
 
 "format": "prettier --config webpack/prettier.json --write \"{src,test,script,config}/**/*.{js,ts,tsx,json}\""
 
-eslint
+eslint 安装
 > @typescript-eslint/eslint-plugin
 > @typescript-eslint/parser
 > eslint
 
-prettier
+prettier 安装
 > eslint-config-prettier
 > eslint-plugin-prettier
 > prettier
@@ -32,6 +32,19 @@ prettier
             "bracketSpacing": true,
             "endOfLine": "auto"
         }]
+    }
+}
+```
+
+vscode setting
+
+```json
+{
+    "editor.formatOnSave": false,
+    "eslint.format.enable": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
     }
 }
 ```
