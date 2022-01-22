@@ -57,3 +57,6 @@ yum install yarn
 ```
 3. 查看是否成功  
 `yarn -v`
+
+140.82.114.3 github.com
+185.199.108.133 raw.githubusercontent.com
