@@ -1,0 +1,32 @@
+haeco: 976517/Welcome123
+yapi: shcroai@gmail.com/123
+scm: admin/@admin
+git.comma: rosen/953507353comma/nYggym-jihhu2-dogsot
+
+luozhaochang@smartcomma.com/Comma2021
+
+
+
+--------------------
+承运商平台账号
+滕腾:
+15877777777    
+
+滕腾:
+123456 密码
+
+
+-----------------------
+
+gitlab https://git.smartcomma.com/users/sign_in
+
+禅道 https://zentao.smartcomma.com/index.php?m=my&f=index
+
+运单小程序 https://org.modao.cc/app/a503c4bc7c692a853a8261516368ca524961f575?simulator_type=device&sticky#screen=sklm6o1ay1qnrgw
+
+智联物流云平台 http://192.168.2.250/#/login
+
+中集 121
+
+scp -r ./build root@192.168.2.121:/var/www/clink
+@CommaTech
