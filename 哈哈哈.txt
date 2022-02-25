@@ -30,3 +30,6 @@ gitlab https://git.smartcomma.com/users/sign_in
 
 scp -r ./build root@192.168.2.121:/var/www/clink
 @CommaTech
+
+https://modao.cc/app/DjrBwqlvr4q8q972gOS8m#screen=skxo2hnxsvzda8d zhoongj H5 集
+https://modao.cc/app/b0493cb817e067328fcf5afd7d92845f51a46421?simulator_type=device&sticky#screen=skwftyqxhws1n8r 中
