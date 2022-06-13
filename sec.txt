@@ -41,6 +41,4 @@ ssh -p 2222 maxuan@car.cccc58.com
 
 
 Jenkins
-http://uat.cccc58.com/jenkins
-账号：commatech
-密码：@CommaTech
+http://uat.cccc58.com/jenkins/commatech/@CommaTech
