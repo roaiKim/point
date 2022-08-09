@@ -77,3 +77,6 @@ react-file-viewer
 
 ### [weui](https://weui.github.io/react-weui/docs/)
 > 微信 的 weui 框架
+
+### [html5-qrcode](https://github.com/mebjas/html5-qrcode)
+> H5 扫码框架
