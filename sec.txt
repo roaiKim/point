@@ -6,39 +6,106 @@ luozhaochang/@luozhaochang   禅道
 
 luozhaochang@smartcomma.com/Comma2021
 
-
-
---------------------
-承运商平台账号
-滕腾:
-15877777777    
-
-滕腾:
-123456 密码
-
-
------------------------
-
 gitlab https://git.smartcomma.com/users/sign_in
 
 禅道 https://zentao.smartcomma.com/index.php?m=my&f=index
 
 运单小程序 https://org.modao.cc/app/a503c4bc7c692a853a8261516368ca524961f575?simulator_type=device&sticky#screen=sklm6o1ay1qnrgw
 
+http://hr-dev.smartcomma.com/#/ 91 华人
+
 智联物流云平台 http://192.168.2.250/#/login
 
-中集 121
-
+/********************中集*************************************************/
+// 中集 121
 scp -r ./build root@192.168.2.121:/var/www/clink
 @CommaTech
 
+// 中集 125
+scp -r ./build root@192.168.2.125:/var/www/clink
+@CommaTech
 
+// 中集 121 H5
+scp -r ./build root@192.168.2.121:/var/www/h5
+@CommaTech
 
 UAT
 ssh -p 2222 maxuan@car.cccc58.com
 @CommaTech
 /var/www/clink/build;
 
+https://x.cccc58.com/#/ 中集prd
 
-Jenkins
-http://uat.cccc58.com/jenkins/commatech/@CommaTech
+// 中集uat Jenkins
+http://uat.cccc58.com/jenkins
+账号：commatech
+密码：@CommaTech
+
+
+/******************************华人*****************************************/
+// 华人91开发
+scp -r ./build root@192.168.2.91:/var/www/clink
+@CommaTech
+
+// 华人91开发 客户端
+scp -r ./build root@192.168.2.91:/var/www/client
+@CommaTech
+
+华人项目开发环境：
+IP：192.168.2.91
+登录账号密码：root   @CommaTech
+mysql账号密码：root   CommaTech1798*
+redis密码：1798
+
+// 华人线上
+http://123.57.219.157/jenkins/
+账号：admin
+密码：808b74ed6dee4677bc9e403b6203329a
+
+
+
+/****************************迪安诊断************************************/
+//  81
+scp -r ./build root@192.168.2.81:/usr/share/nginx/clink
+@CommaTech
+
+
+/***************************中集远程线上*************************/
+// PC 端
+git remote add cccc https://codeup.aliyun.com/60ed1a6d52743a5162b62d5d/tms/tms_react.git
+git remote set-url cccc git@codeup.aliyun.com:60ed1a6d52743a5162b62d5d/tms/tms_react.git
+git push -u cccc prod
+
+// H5 端
+git remote add cccc https://codeup.aliyun.com/60ed1a6d52743a5162b62d5d/tms/tms_h5.git
+git remote set-url cccc git@codeup.aliyun.com:60ed1a6d52743a5162b62d5d/tms/tms_h5.git
+git push -u cccc prod
+
+
+
+[feat] 功能-新功能（可带上禅道任务号）
+[fix] 缺陷修复-修复bug，QA或研发发现的BUG（可带上禅道BUG号）
+[docs] 文档-仅文档更新
+[style] 格式-不影响代码含义的更改（空白、格式、缺少分号等）
+[refactor] 代码重构-既不修复错误也不添加功能的代码更改
+[perf] 性能改进-优化相关，比如提升性能、体验
+[test] 测试-添加缺失测试或纠正现有测试
+[build] 构建-影响构建系统或外部依赖关系的更改（示例范围：gulp、brocoli、npm、pom、gradle）
+[chore] 杂项-不修改src或测试文件的其他更改
+[ci] 持续集成-对CI配置文件和脚本的更改（示例范围：Travis、Circle、BrowserStack、SauceLabs）
+[revert] 回退-回退之前的提交版本
+
+
+关于 分支 
+华人 有 dev  计划分支 prod 4个分支
+其中计划分支 是会变的  sprint 的就是计划分支。
+其中 dev 对应 开发服务器
+计划分支 对应 uat 服务器
+ prod 对应 生产。
+对于非常紧急的 bug 发生在哪台服务器 就到哪个服务器上修复。
+对于不是非常紧急的 或者 没有说明在那修复的 就到 计划分支。
+如果自己判断不了 就问下提BUG的人。
+
+中集的话 多个 测试服务器(对应计划分支)， UAT 就是uat 分支。
+这个要记下 
+npx mddir ./src
