@@ -69,6 +69,12 @@ http://123.57.219.157/jenkins/
 scp -r ./build root@192.168.2.81:/usr/share/nginx/clink
 @CommaTech
 
+// uat
+scp -r ./build root@121.37.187.215:/usr/local/nginx/html/clink
+ecs-23fc
+迪安 测试环境uat 发布 分支为 Sprint 计划分支
+发布完后需要把 这个分支合到uat 分支
+
 
 /***************************中集远程线上*************************/
 // PC 端
