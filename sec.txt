@@ -58,10 +58,25 @@ mysql账号密码：root   CommaTech1798*
 redis密码：1798
 
 // 华人线上
-http://123.57.219.157/jenkins/
+http://123.57.219.157/jenkins
 账号：admin
 密码：808b74ed6dee4677bc9e403b6203329a
+https://tmsanzhi.huaren-scm.com
+admin/huaren-scm1798
 
+// 远程线上
+git remote add huaren-scm https://gitee.com/huaren-scm/clink-web.git
+git push -u huaren-scm prod
+
+// 华人UAT
+http://123.57.208.118:22521/jenkins
+commatech/@CommaTech
+https://huaren.smartcomma.com/#/login
+admin/huaren-scm1798
+
+// 华人 开发
+http://hr-dev.smartcomma.com
+admin/huaren-scm1798
 
 
 /****************************迪安诊断************************************/
