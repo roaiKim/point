@@ -7,3 +7,4 @@ loader的本身是个函数
 而plugin则是插件 让webpack更加灵活 调用webpack的生命周期来实现各种各样的功能
 
 
+loader 是处理浏览器/node不认识的文件进行转化
