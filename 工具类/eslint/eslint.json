@@ -1,0 +1,46 @@
+{
+	"parser": "babel-eslint",
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended"
+	],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 9,
+		"sourceType": "module"
+	},
+	"plugins": [
+		"react"
+	],
+	"ignorePatterns": ["build", "server", "public"],
+	"rules": {
+		"react/prop-types": "off",
+		"no-console": "off",
+		"semi": ["error", "never"],
+		"indent": ["error", 2],
+		"quotes": ["error", "single"],
+		"block-spacing": "error",
+		"react/no-typos": "error",
+		"space-before-blocks": "error",
+		"object-curly-spacing": ["error", "always"],
+		"no-var": "error"
+	},
+
+	"eslint.probe": [
+		"javascript",
+		"javascriptreact",
+		"html",
+		"markdown",
+		"scss"
+	],
+	"javascript.implicitProjectConfig.experimentalDecorators": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	}
+}

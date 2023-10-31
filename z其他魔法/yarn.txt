@@ -1,0 +1,13 @@
+
+
+yarn  ��ʹ��
+
+1, yarn init   //yarn�ĳ�ʼ��
+
+2,yarn add [package]  --dev / --peer / optional   //��װ���� [��װ����������  / �������� / all]
+
+3,yarn upgrade [package]  //����������
+
+4,yarn remove [package]  //�Ƴ�������
+
+5,yarn / yarn install  //��װ��Ŀ��ȫ������

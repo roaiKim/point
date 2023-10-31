@@ -1,0 +1,16 @@
+
+
+redux
+1£¬Store: const store = createStore(fn);
+2£¬State: const state = store.getState();
+3£¬Action: const action = {
+type: "ADD_TODO",
+playload: "Learn Redux",
+}
+3£¬store.dispatch({type: "ADD_TODO", payload:"Learn Redux"});
+4£¬ Reducer: 
+5£¬store.subscripe(listener);
+
+ºÏ²¢Redux:
+import{combineReduers} from "redux";
+const chartRedux = combineReduers({});
