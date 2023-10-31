@@ -84,4 +84,7 @@ react-file-viewer
 ### [Remix](https://github.com/remix-run/remix)
 > react 后台渲染框架 Remix
 
+### [React spinners](https://github.com/davidhu2000/react-spinners)
+> loading效果的react 库
 
+### [anime]
